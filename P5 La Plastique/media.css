@@ -1,0 +1,250 @@
+/* General Styles */
+:root {
+    font-size: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #084406;
+    padding: 1rem 2rem;
+    color: white;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar .nav-links li a {
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar .nav-links li a:hover {
+    color: #00ffcc; /* Change text color */
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 10px;
+}
+
+.navbar .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Full-Screen Menu */
+.navbar .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+}
+
+/* Increase font size for menu items when menu is active */
+.navbar .nav-links.active li a {
+    font-size: 7rem; /* Adjust this value as needed */
+    padding: 1rem 0; /* Add some spacing between menu items */
+    font-weight: bold;
+}
+
+/* Correct X transformation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 10px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -10px);
+}
+
+/* Blurred Background for Body */
+.blur-background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: 998;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    background-color: #74de81;
+    height: 90vh;
+    font-size: 5rem;
+}
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background-color: #a4dd9f;
+    max-height: max-content;
+
+}
+
+.au {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.about img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 50px;
+}
+
+/* Services Section */
+.services {
+    padding: 2rem;
+    background-color: #74de81;
+    max-height: max-content;
+}
+
+.works {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.container {
+    max-width: 1300px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    margin-bottom: 80px;
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.more-btn {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #084406;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; /* Hide the menu by default on smaller screens */
+    }
+
+    .navbar .hamburger {
+        display: flex; /* Show the hamburger icon on smaller screens */
+    }
+
+    .about img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+    .photo-gallery {
+        flex-direction: column;
+    }
+}
+
+.detail {
+    font-size: 2rem;
+}
+
+.contact {
+    background-color: #084406;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.whatsapp-btn img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-btn:hover img {
+    transform: scale(1.5) rotate(10deg);
+}
+
+.slogan {
+    font-size: 3rem;
+}
+
+.c {
+    font-size: 2rem;
+}
